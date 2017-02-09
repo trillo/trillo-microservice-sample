@@ -16,3 +16,5 @@ trillo-server/logs/trillo.log
 microservice/logs/trillo.log
 
 microsvc-bin/logs/trillo.log
+
+*.gz
