@@ -6,3 +6,4 @@ cd microservice
 mvn install
 
 cp startMicroService.txt ../microsvc-bin/startMicroService.sh
+chmod +x ../microsvc-bin/startMicroService.sh
