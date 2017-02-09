@@ -1,0 +1,24 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "NameForm",
+    "type" : "form",
+    "impl" : "Trillo.FormView",
+    "container" : "trillo-dialog-container"
+  }
+</script>
+
+<div>
+  <h1 class="trillo-form-title">
+    {{{title}}}
+  </h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control js-required" nm="name">
+    </div>
+    <div class="trillo-dialog-button-group">
+      <button type="submit" nm="ok" class="btn btn-primary js-tool">Submit</button>
+      <button type="button" nm="close" class="btn btn-primary js-tool">Close</button>
+    </div>
+  </form>
+</div>

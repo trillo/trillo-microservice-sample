@@ -1,0 +1,133 @@
+/* Standard browser css override */
+
+html { 
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll; 
+  overflow-x: auto; 
+  height:100%
+}
+
+table { empty-cells: show; }
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+body {
+    border:0px; 
+    margin:0px auto; 
+    font-size: 13px;
+    line-height: 1.23em;
+    font-size:14px;
+    font-family:  Roboto, sans-serif;
+    color: #222222;
+    background-color:#ffffff;
+    height:100%
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+
+.main-logo {
+  padding-left: 10px;
+  padding-right: 15px;
+  border-right: 1px solid #ccc;
+}
+
+.main-app-name {
+  color: #ff9933;
+  font-family: arial;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.top-nav-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  vertical-align:middle;
+  padding: 0px 10px;
+}
+
+.login-menu {
+  right: 0; 
+  left: auto; 
+  margin-top: 0; 
+  border-top-left-radius: 0; 
+  border-top-right-radius: 0
+}
+
+.screen-name-b, .logout-b {
+  display: block;
+}
+
+.login-signup-c {
+  display: inline-block;
+}
+
+.login-b, .signup-b {
+  height: 30px;
+  padding: 5px 10px !important;
+  color: #fff !important;
+  margin: 10px 0px;
+}
+
+.signup-b {
+  margin-right: 10px;
+}
+
+.nav-item-separator {
+  border-top:1px dashed #333; 
+  padding-top:5px; 
+  margin-top:10px;
+}
+
+.nav-item-small {
+  font-size: 11px;
+}
+
+.app-catalog-page .app-catalog-nav-item {
+  display: none !important;
+}
+
+/* Styles related page layout - left navigation column, content area, tab container etc. */
+
+.left-column {
+  background-color: #f7f7f7;
+  bottom: 0;
+  box-shadow: 5px 0 5px -5px rgba(34, 25, 25, 0.1);
+  top: 55px;
+  position: fixed;
+  z-index: 1010;
+  border-right: 1px solid #dadada;
+  width: 240px;
+}
+
+.left-column.trillo-container-overlaid {
+  top: 130px !important;
+}
+
+.tab-container {
+  display: none;
+  height: 50px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: fixed;
+  left:0px;
+  right: 0px;
+  z-index: 1002;
+  padding: 10px 0px;
+}
+
+.tab-container-shown .tab-container {
+  display: block;
+}
+
+.main-content-area h1 {
+  margin:20px;
+  text-align: center;
+}
+
+.trillo-has-footer .trillo-application {
+   padding-bottom: 35px;
+}

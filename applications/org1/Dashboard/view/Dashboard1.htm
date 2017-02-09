@@ -1,0 +1,163 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "Dashboard1",
+    "type" : "dashboard",
+    "displayName" : "Dashboard1",
+    "impl" : "Trillo.DashboardView",
+    "container" : "main-container",
+    "controller" : "Trillo.DashboardController",
+    "nextViewSpecs" : [
+      {
+        "name" : "U",
+        "autoLoad" : true,
+        "container" : "U_container"
+      },
+      {
+        "name" : "V",
+        "autoLoad" : true,
+        "container" : "V_container"
+      },
+      {
+        "name" : "X",
+        "autoLoad" : true,
+        "container" : "X_container"
+      },
+      {
+        "name" : "Y",
+        "autoLoad" : true,
+        "container" : "Y_container"
+      },
+      {
+        "name" : "ChartView1",
+        "autoLoad" : true,
+        "container" : "ChartView1_container"
+      },
+      {
+        "name" : "ChartView2",
+        "autoLoad" : true,
+        "container" : "ChartView2_container"
+      },
+      {
+        "name" : "ChartView3",
+        "autoLoad" : true,
+        "container" : "ChartView3_container"
+      },
+      {
+        "name" : "ChartView4",
+        "autoLoad" : true,
+        "container" : "ChartView4_container"
+      },
+      {
+        "name" : "ChartView5",
+        "autoLoad" : true,
+        "container" : "ChartView5_container"
+      },
+      {
+        "name" : "ChartView6",
+        "autoLoad" : true,
+        "container" : "ChartView6_container"
+      },
+      {
+        "name" : "ChartView7",
+        "autoLoad" : true,
+        "container" : "ChartView7_container"
+      }
+    ]
+  }
+</script>
+
+<div nm="Dashboard1">
+  <div class="js-flex-grid trillo-flex-grid">
+    <div nm="db1_r1" class="trillo-flex-row js-flex-row">
+        <div viewname="U" class="trillo-flex-cell js-flex-cell" min-width="150" min-height="150">
+          <!--#include file="topbar2.htm" -->
+          <div nm="U_container" class="trillo-cell-content js-non-native-scrollbar" style=
+          "position:relative">
+          </div>
+          <div class="js-size-handle trillo-cell-size-handle"></div>
+        </div>
+        <div viewname="V" class="trillo-flex-cell js-flex-cell" min-width="150" min-height="150">
+          <!--#include file="topbar2.htm" -->
+          <div nm="V_container" class="trillo-cell-content js-non-native-scrollbar" style=
+          "position:relative">
+          </div>
+          <div class="js-size-handle trillo-cell-size-handle"></div>
+        </div>
+        <div viewname="X" class="trillo-flex-cell js-flex-cell" min-width="150" min-height="150">
+          <!--#include file="topbar2.htm" -->
+          <div nm="X_container" class="trillo-cell-content js-non-native-scrollbar" style=
+          "position:relative">
+          </div>
+          <div class="js-size-handle trillo-cell-size-handle"></div>
+        </div>
+        <div viewname="Y" class="trillo-flex-cell js-flex-cell" min-width="150" min-height="150">
+          <!--#include file="topbar2.htm" -->
+          <div nm="Y_container" class="trillo-cell-content js-non-native-scrollbar" style=
+          "position:relative">
+          </div>
+          <div class="js-size-handle trillo-cell-size-handle"></div>
+        </div>
+    </div>
+    <div nm="db1_r2" class="trillo-flex-row js-flex-row">
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView1">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView1_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+    </div>
+    <div nm="db1_r3" class="trillo-flex-row js-flex-row">
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView2">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView2_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView3">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView3_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView4">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView4_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+    </div>
+    <div nm="db1_r4" class="trillo-flex-row js-flex-row">
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView5">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView5_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView6">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView6_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+      <div class="trillo-flex-cell js-flex-cell" min-width="300" min-height="450" viewname="ChartView7">
+        <!--#include file="topbar.htm" -->
+        <div class="trillo-cell-content js-non-native-scrollbar" style="position:relative" nm=
+        "ChartView7_container">
+        </div>
+        <div class="js-size-handle trillo-cell-size-handle"></div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="trillo-flex-grid-iconbar js-flex-grid-iconbar">
+    <div style="font-size:20px" class=
+    "glyphicon glyphicon-modal-window trillo-flex-minified-icon js-flex-minified-icon">
+    </div>
+  </div>
+</div>

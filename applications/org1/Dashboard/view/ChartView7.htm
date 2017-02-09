@@ -1,0 +1,45 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView7",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView7_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "xAttr" : "x",
+      "yAttrs" : [
+        "y1",
+        "y2"
+      ],
+      "type" : "area-step",
+      "displayName" : "Area Step Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        }
+      },
+      "zoom": {
+        "enabled": true
+      },
+      "name" : "Chart7"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView7">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart7">
+    <div class="trillo-title js-title">
+      Area Step Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

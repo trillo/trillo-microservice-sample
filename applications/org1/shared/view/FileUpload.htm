@@ -1,0 +1,35 @@
+<div>
+  <h1 class="trillo-form-title">
+    Upload File
+  </h1>
+  <form action="/fileUpload" method="post" enctype="multipart/form-data" target="hiddenFrame" class="trillo-upload-form">
+    <div class="js-upload-alert alert alert-block alert-danger fade in" style="display:none">
+    </div>
+    <input type="hidden" name="folder" nm="folder">
+    <input type="hidden" name="className" nm="className">
+    <input type="hidden" name="targetViewName" nm="targetViewName">
+    <div class="trillo-upload-dragdrop-box js-file-drag-drop"">Drag and drop file from your computer here.
+      <div class="progress">
+        <div class="progress-bar js-progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+          style="width: 0%">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Or, choose File from Your Computer</label>
+      <div class="trillo-upload-form-group-c">
+        <div class="input-group">
+          <input type="text" maxlength="50" name="fileName" nm="fileName" class="trillo-file-name">
+          <span class="trillo-choose-button input-group-addon" nm="chooseButton">Choose File...</span>
+        </div>
+        <input type="file" name="file" nm="file" class="trillo-file" size="51">
+      </div>
+    </div>
+    <div class="trillo-dialog-button-group">
+      <button type="submit" name="uploadFile" nm="uploadFile" class="btn btn-primary">Upload</button>
+      <button type="button" name="close" nm="close" class="btn btn-primary js-tool">Close</button>
+    </div>
+  </form>
+  <iframe class="trillo-upload-form-hidden-iframe" name="hiddenFrame"></iframe>
+</div>
+

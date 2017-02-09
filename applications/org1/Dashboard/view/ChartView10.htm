@@ -1,0 +1,46 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView10",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView10_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "xAttr" : "x",
+      "yAttrs" : [
+        "y1",
+        "y2",
+        "y3"
+      ],
+      "type" : "scatter",
+      "displayName" : "Scatter Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        }
+      },
+      "zoom": {
+        "enabled": true
+      },
+      "name" : "Chart10"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView10">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart10">
+    <div class="trillo-title js-title">
+      Scatter Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

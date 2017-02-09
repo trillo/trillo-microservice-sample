@@ -1,0 +1,30 @@
+.navbar-inverse .navbar-nav > .trillo-selected > a, 
+.navbar-inverse .navbar-nav > .trillo-selected > a:focus, 
+.navbar-inverse .navbar-nav > .trillo-selected > a:hover {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .trillo-selected > a:after {
+    content: '';
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 10px;
+    height:2px;
+    background-color: #fff;
+    padding: 0, 15px;
+}
+
+.navbar-inverse .collapse.in .navbar-nav > .trillo-selected > a:after,
+.navbar-inverse .collapsing .navbar-nav > .trillo-selected > a:after {
+  height:0px;
+}
+
+.navbar-inverse .collapse.in .navbar-nav > .trillo-selected > a, 
+.navbar-inverse .collapse.in .navbar-nav > .trillo-selected > a:focus, 
+.navbar-inverse .collapse.in .navbar-nav > .trillo-selected > a:hover,
+.navbar-inverse .collapsing .navbar-nav > .trillo-selected > a, 
+.navbar-inverse .collapsing .navbar-nav > .trillo-selected > a:focus, 
+.navbar-inverse .collapsing .navbar-nav > .trillo-selected > a:hover {
+    background-color: #080808;
+}

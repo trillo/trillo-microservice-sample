@@ -1,0 +1,22 @@
+[
+  {
+    "defaultPage" : true,
+    "description" : "Dashboards Sample",
+    "displayName" : "Dashboards",
+    "htmlHeadTitle" : "Dashboards Sample",
+    "keywords" : "Dashboard",
+    "name" : "Dashboard",
+    "requiredRoles" : "none",
+    "uid" : "AppM.Dashboard",
+    "useTestData" : true
+  },
+  {
+    "description" : "Trillo authentication page",
+    "displayName" : "Login",
+    "hidden" : true,
+    "htmlHeadTitle" : "Trillo authentication",
+    "keywords" : "Cloud, JavaScript, Framework, Services, Micro, Prototype",
+    "name" : "auth",
+    "uid" : "AppM.auth"
+  }
+]

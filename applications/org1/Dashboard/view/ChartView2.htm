@@ -1,0 +1,46 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView2",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView2_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "name" : "Chart2",
+      "xAttr" : "timeStamp",
+      "yAttrs" : [
+        "y1",
+        "y2"
+      ],
+      "type" : "area",
+      "displayName" : "Area Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        },
+        "x" : {
+          "type" : "timeseries",
+          "tick" : "Trillo.timeTickFormat"
+        }
+      }
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView2">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart2">
+    <div class="trillo-title js-title">
+      Area Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

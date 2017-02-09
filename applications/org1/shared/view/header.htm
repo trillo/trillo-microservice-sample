@@ -1,0 +1,70 @@
+ <script spec="view" type="application/json">
+  {
+    "name" : "header",
+    "type" : "container",
+    "impl" : "Trillo.FlexGridView",
+    "nextViewSpecs" : [
+      {
+        "name" : "mainMenu",
+        "type" : "menu",
+        "embedded" : true
+      }
+     ]
+  }
+</script>
+
+<div id="main-header" class="nav-bar navbar-1 js-flex-grid" nm="header">
+  <div class="js-flex-row">
+    <div flex-width="false" class="js-flex-col" style="float:left">
+      <div class="trillo-clearfix">
+        <a href="/" class="navbar-brand" title="Home">
+          <img class="main-logo" src="{{{logoStamp}}}/"> <span class="main-app-name">{{{displayName}}}</span>
+        </a>
+      </div>
+    </div>
+    <div style="text-align:center" min-width="50" hide-exp="<=767" nm="top-nav-container" class="js-flex-col">
+    </div>
+    <div flex-width="false" class="js-flex-col trillo-hidden" hide-exp="<=767" style="float:right">
+      <ul nm="mainMenu" class="nav js-menu js-menu-items-c">
+        <li class="trillo-role-dev-only trillo-role-admin-only app-catalog-nav-item" style="position:relative; float:left">
+          <a href="/AppCatalog" title="Application Catalog">
+            <i class="my-app-catalog glyphicon glyphicon-th-large"></i>
+          </a>
+        </li>
+        <li nm="userMenu" class="dropdown user-dropdown trillo-on-valid-role js-menu" style="position:relative; float:left">
+          <a href="#" class="dropdown-toggle js-menu-trigger" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user"></i><span class="caret"></span>
+          </a>
+          <ul class="trillo-dropdown-menu login-menu dropdown-menu js-menu-items-c">
+            <li class="screen-name-b js-menu-item">
+              <a nm="myProfile" href="#" title="Click to change profile" class="screen-name js-tool">
+                <span class="js-screenname">{{{userFullName}}}</span>
+              </a>
+            </li>
+            <li class="logout-b js-menu-item">
+              <a nm="changeMyPassword" class="js-tool" href="#">
+                Change Password
+              </a>
+            </li>
+            <li class="logout-b js-menu-item">
+              <a nm="_logout" href="/_logout" class="screen-name js-tool">
+                Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="js-flex-col trillo-hidden" hide-exp=">767" style="float:right">
+      <div class="trillo-clearfix">
+        <button type="button" class="navbar-toggle" id="header-nav-popover-tigger">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="header-nav-popover-target" class="trillo-popover-dropdown-menu" v-offset="-10px" alignment="b-r"></div>
+</div>
+

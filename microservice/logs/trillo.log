@@ -1,0 +1,802 @@
+Feb 08 15:20:01 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2674 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:20:01 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:20:01 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:20:01 PST 2017]; root of context hierarchy
+Feb 08 15:20:01 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:20:02 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:20:02 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:20:02 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:20:02 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:20:02 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1305 ms
+Feb 08 15:20:03 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:20:03 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:20:03 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:20:03 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:20:03 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:20:03 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:20:01 PST 2017]; root of context hierarchy
+Feb 08 15:20:03 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public java.lang.String io.trillo.microsvc.controller.MicroSvcController.todoList()
+Feb 08 15:20:03 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/todo/updateCompleted || /updateCompleted],produces=[application/json]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.updateCompleted(java.lang.String,boolean)
+Feb 08 15:20:03 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:20:03 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:20:03 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:20:03 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:20:03 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:20:03 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:20:03 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:20:03 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:20:03 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:20:03 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.497 seconds (JVM running for 3.777)
+Feb 08 15:20:03 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:20:17 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:20:17 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:20:17 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+Feb 08 15:20:17 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:17 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:17 ERROR http-nio-8080-exec-2 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:17 ERROR http-nio-8080-exec-2 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:19 ERROR http-nio-8080-exec-3 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:19 ERROR http-nio-8080-exec-3 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:26 ERROR http-nio-8080-exec-5 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:26 ERROR http-nio-8080-exec-5 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:41 ERROR http-nio-8080-exec-7 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:41 ERROR http-nio-8080-exec-7 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:20:57 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:20:01 PST 2017]; root of context hierarchy
+Feb 08 15:20:57 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 15:21:07 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2686 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:21:07 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:21:07 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:21:07 PST 2017]; root of context hierarchy
+Feb 08 15:21:08 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:21:09 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:21:09 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:21:09 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:21:09 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:21:09 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1196 ms
+Feb 08 15:21:09 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:21:09 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:21:09 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:21:09 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:21:09 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:21:09 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:21:07 PST 2017]; root of context hierarchy
+Feb 08 15:21:09 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/todo/updateCompleted || /updateCompleted],produces=[application/json]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.updateCompleted(java.lang.String,boolean)
+Feb 08 15:21:09 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public java.lang.String io.trillo.microsvc.controller.MicroSvcController.todoList()
+Feb 08 15:21:09 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:21:09 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:21:09 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:21:09 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:21:09 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:21:09 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:21:09 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:21:09 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:21:09 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:21:09 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.229 seconds (JVM running for 3.269)
+Feb 08 15:21:09 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:21:13 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:21:13 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:21:13 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 9 ms
+Feb 08 15:21:13 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:21:13 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:22:21 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:21:07 PST 2017]; root of context hierarchy
+Feb 08 15:22:21 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 15:25:35 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2706 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:25:35 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:25:35 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:25:35 PST 2017]; root of context hierarchy
+Feb 08 15:25:35 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:25:36 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:25:36 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:25:36 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:25:36 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:25:36 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1214 ms
+Feb 08 15:25:36 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:25:36 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:25:36 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:25:36 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:25:36 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:25:37 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:25:35 PST 2017]; root of context hierarchy
+Feb 08 15:25:37 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/todo/updateCompleted || /updateCompleted],produces=[application/json]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.updateCompleted(java.lang.String,boolean)
+Feb 08 15:25:37 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public java.lang.String io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 15:25:37 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:25:37 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:25:37 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:25:37 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:25:37 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:25:37 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:25:37 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:25:37 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:25:37 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:25:37 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.33 seconds (JVM running for 2.981)
+Feb 08 15:25:37 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:25:39 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:25:39 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:25:39 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+Feb 08 15:25:39 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:25:39 ERROR http-nio-8080-exec-1 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:25:40 ERROR http-nio-8080-exec-2 DirectJDKLog.java:182 Servlet.service() for servlet dispatcherServlet threw exception
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:25:40 ERROR http-nio-8080-exec-2 DirectJDKLog.java:182 Exception Processing ErrorPage[errorCode=0, location=/error]
+javax.servlet.ServletException: Circular view path [error]: would dispatch back to the current handler URL [/error] again. Check your ViewResolver setup! (Hint: This may be the result of an unspecified view, due to default view name generation.)
+	at org.springframework.web.servlet.view.InternalResourceView.prepareForRendering(InternalResourceView.java:205) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:145) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:720) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:468) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:391) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:318) ~[tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:439) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:305) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:182) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.28.jar:8.0.28]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Feb 08 15:26:23 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:25:35 PST 2017]; root of context hierarchy
+Feb 08 15:26:23 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 15:32:41 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2739 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:32:41 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:32:41 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:32:41 PST 2017]; root of context hierarchy
+Feb 08 15:32:41 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:32:42 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:32:42 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:32:42 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:32:42 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:32:42 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1153 ms
+Feb 08 15:32:43 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:32:43 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:32:43 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:32:43 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:32:43 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:32:43 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:32:41 PST 2017]; root of context hierarchy
+Feb 08 15:32:43 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/todo/updateCompleted || /updateCompleted],produces=[application/json]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.updateCompleted(java.lang.String,boolean)
+Feb 08 15:32:43 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 15:32:43 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:32:43 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:32:43 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:32:43 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:32:43 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:32:43 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:32:43 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:32:43 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:32:43 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:32:43 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.175 seconds (JVM running for 3.194)
+Feb 08 15:32:43 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:32:53 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:32:53 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:32:53 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 9 ms
+Feb 08 15:34:52 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:32:41 PST 2017]; root of context hierarchy
+Feb 08 15:34:52 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 15:34:57 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2747 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:34:57 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:34:57 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:34:57 PST 2017]; root of context hierarchy
+Feb 08 15:34:57 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:34:58 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:34:58 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:34:58 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:34:58 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:34:58 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1162 ms
+Feb 08 15:34:59 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:34:59 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:34:59 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:34:59 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:34:59 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:34:59 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:34:57 PST 2017]; root of context hierarchy
+Feb 08 15:34:59 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/todo/updateCompleted || /updateCompleted],produces=[application/json]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.updateCompleted(java.lang.String,boolean)
+Feb 08 15:34:59 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 15:34:59 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:34:59 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:34:59 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:34:59 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:34:59 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:34:59 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:34:59 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:34:59 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:34:59 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:34:59 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.178 seconds (JVM running for 2.819)
+Feb 08 15:34:59 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:35:06 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:35:06 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:35:06 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 9 ms
+Feb 08 15:49:35 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2f7298b: startup date [Wed Feb 08 15:34:57 PST 2017]; root of context hierarchy
+Feb 08 15:50:12 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2835 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 15:50:12 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 15:50:12 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a192cfe: startup date [Wed Feb 08 15:50:12 PST 2017]; root of context hierarchy
+Feb 08 15:50:12 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 15:50:13 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 15:50:13 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 15:50:13 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 15:50:13 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 15:50:13 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1211 ms
+Feb 08 15:50:14 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 15:50:14 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 15:50:14 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 15:50:14 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 15:50:14 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 15:50:14 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a192cfe: startup date [Wed Feb 08 15:50:12 PST 2017]; root of context hierarchy
+Feb 08 15:50:14 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 15:50:14 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/data/{id}],produces=[application/json]}" onto public java.lang.Object io.trillo.microsvc.controller.MicroSvcController.getData(java.lang.String)
+Feb 08 15:50:14 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 15:50:14 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 15:50:14 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:50:14 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 15:50:14 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 15:50:14 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 15:50:14 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 15:50:14 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 15:50:14 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 15:50:14 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.241 seconds (JVM running for 2.906)
+Feb 08 15:50:14 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 15:50:19 INFO http-nio-8080-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 15:50:19 INFO http-nio-8080-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 15:50:19 INFO http-nio-8080-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 9 ms
+Feb 08 16:02:31 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a192cfe: startup date [Wed Feb 08 15:50:12 PST 2017]; root of context hierarchy
+Feb 08 16:02:31 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 16:03:05 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2865 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 16:03:05 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 16:03:05 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5119fb47: startup date [Wed Feb 08 16:03:05 PST 2017]; root of context hierarchy
+Feb 08 16:03:05 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 16:03:06 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8080 (http)
+Feb 08 16:03:06 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 16:03:06 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 16:03:06 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 16:03:06 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1265 ms
+Feb 08 16:03:06 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 16:03:06 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 16:03:06 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 16:03:06 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 16:03:06 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 16:03:07 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5119fb47: startup date [Wed Feb 08 16:03:05 PST 2017]; root of context hierarchy
+Feb 08 16:03:07 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 16:03:07 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/data/{id}],produces=[application/json]}" onto public java.lang.Object io.trillo.microsvc.controller.MicroSvcController.getData(java.lang.String)
+Feb 08 16:03:07 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 16:03:07 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 16:03:07 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 16:03:07 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 16:03:07 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 16:03:07 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8080"]
+Feb 08 16:03:07 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8080"]
+Feb 08 16:03:07 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 16:03:07 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8080 (http)
+Feb 08 16:03:07 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.302 seconds (JVM running for 3.327)
+Feb 08 16:03:07 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 16:03:36 INFO Thread-2 AbstractApplicationContext.java:957 Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5119fb47: startup date [Wed Feb 08 16:03:05 PST 2017]; root of context hierarchy
+Feb 08 16:03:36 INFO Thread-2 MBeanExporter.java:449 Unregistering JMX-exposed beans on shutdown
+Feb 08 16:03:40 INFO main StartupInfoLogger.java:48 Starting MicroSvc on anils-mbp with PID 2867 (/Users/anilsharma/workspace2/trillo-microservice-sample/microservice/target/classes started by anilsharma in /Users/anilsharma/workspace2/trillo-microservice-sample/microservice)
+Feb 08 16:03:40 INFO main SpringApplication.java:653 No profiles are active
+Feb 08 16:03:40 INFO main AbstractApplicationContext.java:577 Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a192cfe: startup date [Wed Feb 08 16:03:40 PST 2017]; root of context hierarchy
+Feb 08 16:03:40 INFO pool-2-thread-1 Version.java:17 HV000001: Hibernate Validator 5.2.2.Final
+Feb 08 16:03:41 INFO main TomcatEmbeddedServletContainer.java:81 Tomcat initialized with port(s): 8090 (http)
+Feb 08 16:03:41 INFO main DirectJDKLog.java:180 Starting service Tomcat
+Feb 08 16:03:41 INFO main DirectJDKLog.java:180 Starting Servlet Engine: Apache Tomcat/8.0.28
+Feb 08 16:03:41 INFO localhost-startStop-1 DirectJDKLog.java:180 Initializing Spring embedded WebApplicationContext
+Feb 08 16:03:41 INFO localhost-startStop-1 EmbeddedWebApplicationContext.java:270 Root WebApplicationContext: initialization completed in 1193 ms
+Feb 08 16:03:41 INFO localhost-startStop-1 ServletRegistrationBean.java:189 Mapping servlet: 'dispatcherServlet' to [/]
+Feb 08 16:03:41 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'characterEncodingFilter' to: [/*]
+Feb 08 16:03:41 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Feb 08 16:03:41 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Feb 08 16:03:41 INFO localhost-startStop-1 AbstractFilterRegistrationBean.java:258 Mapping filter: 'requestContextFilter' to: [/*]
+Feb 08 16:03:42 INFO main RequestMappingHandlerAdapter.java:532 Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a192cfe: startup date [Wed Feb 08 16:03:40 PST 2017]; root of context hierarchy
+Feb 08 16:03:42 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/HealthCheck],methods=[GET]}" onto public io.trillo.microsvc.entity.Result io.trillo.microsvc.controller.MicroSvcController.healthCheck()
+Feb 08 16:03:42 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/data/{id}],produces=[application/json]}" onto public java.lang.Object io.trillo.microsvc.controller.MicroSvcController.getData(java.lang.String)
+Feb 08 16:03:42 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Feb 08 16:03:42 INFO main AbstractHandlerMethodMapping.java:515 Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+Feb 08 16:03:42 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 16:03:42 INFO main AbstractUrlHandlerMapping.java:341 Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Feb 08 16:03:42 INFO main MBeanExporter.java:431 Registering beans for JMX exposure on startup
+Feb 08 16:03:42 INFO main DirectJDKLog.java:180 Initializing ProtocolHandler ["http-nio-8090"]
+Feb 08 16:03:42 INFO main DirectJDKLog.java:180 Starting ProtocolHandler ["http-nio-8090"]
+Feb 08 16:03:42 INFO main DirectJDKLog.java:180 Using a shared selector for servlet write/read
+Feb 08 16:03:42 INFO main TomcatEmbeddedServletContainer.java:162 Tomcat started on port(s): 8090 (http)
+Feb 08 16:03:42 INFO main StartupInfoLogger.java:57 Started MicroSvc in 2.207 seconds (JVM running for 3.231)
+Feb 08 16:03:42 INFO main MicroSvc.java:17 Current working directory : /Users/anilsharma/workspace2/trillo-microservice-sample/microservice
+Feb 08 16:03:45 INFO http-nio-8090-exec-1 DirectJDKLog.java:180 Initializing Spring FrameworkServlet 'dispatcherServlet'
+Feb 08 16:03:45 INFO http-nio-8090-exec-1 FrameworkServlet.java:488 FrameworkServlet 'dispatcherServlet': initialization started
+Feb 08 16:03:45 INFO http-nio-8090-exec-1 FrameworkServlet.java:507 FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms

@@ -1,0 +1,34 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView11",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView11_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "name" : "Chart11",
+      "xAttr" : "name",
+      "yAttrs" : [
+        "y"
+      ],
+      "label" : "%",
+      "type" : "donut",
+      "displayName" : "Donut Chart"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView11">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart11">
+    <div class="trillo-title js-title">
+      Donut Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

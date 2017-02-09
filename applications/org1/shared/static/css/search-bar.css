@@ -1,0 +1,128 @@
+/* --------------------------------------------------------------------------------------------------------- */
+
+/* Style auto complete search box. */
+
+.trillo-search-box-container-container { 
+  max-width:400px;
+  height:30px;
+  position:relative;
+  border: 1px solid #cccccc;
+  width:33%;
+  float: right;
+  display: none;
+}
+
+.trillo-search-box-container { 
+  width:100%;
+  position:absolute;
+  left: 0px;
+}
+
+.trillo-search-box {
+  margin-top: 0px;
+  display:inline-block;
+  width:100%;
+}
+
+.trillo-search-action {
+  background-color: #2b5593;
+  background-image: url("../img/search.png");
+  background-position: 4px 2px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 28px;
+  margin-left:-4px; // due to textbox padding.
+  position: relative;
+  width: 32px;
+  display:inline-block;
+  position:absolute;
+  right: 0px;
+}
+
+.trillo-search-text {
+  height:28px;
+  width:100%;
+  font-weight: bold;
+  border: 0px solid #cccccc;
+  border-radius: 1px;
+  outline: medium none;
+  padding: 4px 8px;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:        border-box;
+  text-transform: lowercase;
+  font-size: 15px;
+  color: #545454;
+  background-color: #f2f2f2;
+}
+
+.trillo-search-box-container .tt-dropdown-menu {
+  min-width:240px;
+}
+
+.twitter-typeahead {
+  width: 100%;
+  vertical-align:middle;
+}
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.tt-dropdown-menu {
+  width:100%;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:        border-box;
+}
+
+.tt-dropdown-menu h3 {
+  border-bottom: 1px solid #CCCCCC;
+  margin: 0 20px 5px;
+  padding: 3px 0;
+}
+
+.tt-suggestion {
+  font-size: 17px;
+}
+
+.tt-suggestion {
+  text-align:left;
+  display: block;
+  padding: 5px 20px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+
+.tt-suggestion.tt-is-under-cursor a {
+  color: #fff;
+}
+
+.tt-suggestion p {
+  margin: 0;
+  line-height: 1.5em;
+}
+
+input.tt-hint {
+  color: #aaaaaa;
+}
+

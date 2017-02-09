@@ -1,0 +1,3 @@
+shared/static/js/shared_ns.js
+shared/static/js/appC.js
+Dashboard/static/js/Dashboard_ns.js

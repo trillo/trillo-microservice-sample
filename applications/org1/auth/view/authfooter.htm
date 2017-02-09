@@ -1,0 +1,32 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "authfooter",
+    "type" : "container",
+    "nextViewSpecs" : [
+      {
+        "name" : "footerNav",
+        "type" : "nav",
+        "embedded" : true
+      }
+    ]
+  }
+</script>
+<footer class="footer" nm="authfooter">
+  <div class="container-fluid">
+    <div id="navbar">
+      <ul nm="footerNav" class="nav navbar-nav navbar-left js-navigation">
+        <li nm="about"  class="js-nav-item" style="display:none">
+          <a href="/About">
+            About
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="text-muted">
+          &#169; 2017 {{{orgName}}}.
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+

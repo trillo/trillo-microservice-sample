@@ -1,0 +1,58 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView9",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView9_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "xAttr" : "x",
+      "yAttrs" : [
+        "y1",
+        "y2",
+        "y3"
+      ],
+      "type" : "bar",
+      "displayName" : "Stacked Bar Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        },
+        "x" : {
+          "label" : {
+            "text" : "X Label",
+            "position": "outer-center"
+          }
+        }
+      },
+      "zoom": {
+        "enabled": true
+      },
+      "groups" : [
+        [ "y1",
+          "y2",
+          "y3"
+        ]
+      ],
+      "name" : "Chart9"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView9">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart9">
+    <div class="trillo-title js-title">
+      Stacked Bar Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

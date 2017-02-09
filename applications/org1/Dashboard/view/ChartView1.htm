@@ -1,0 +1,46 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView1",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView1_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "name" : "Chart1",
+      "xAttr" : "timeStamp",
+      "yAttrs" : [
+        "y1",
+        "y2"
+      ],
+      "type" : "line",
+      "displayName" : "Line Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        },
+        "x" : {
+          "type" : "timeseries",
+          "tick" : "Trillo.timeTickFormat"
+        }
+      }
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView1">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart1" style="min-width:600px">
+    <div class="trillo-title js-title">
+      Line Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

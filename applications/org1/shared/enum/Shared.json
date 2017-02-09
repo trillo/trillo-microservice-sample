@@ -1,0 +1,13 @@
+{
+   "sampleEnum": [
+    {"v": 1, "n":  "Choice1"},
+    {"v": 2, "n":  "Choice2"}
+   ],
+   
+  "roleEnum": [
+    {"v": "ROLE_ADMIN", "n":  "Admin"},
+    {"v": "ROLE_USER", "n":  "User"}
+  ]
+}
+
+

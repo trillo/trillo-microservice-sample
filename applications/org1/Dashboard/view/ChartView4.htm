@@ -1,0 +1,52 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView4",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView4_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "xAttr" : "timeStamp",
+      "yAttrs" : [
+        "y1",
+        "y2"
+      ],
+      "type" : "line",
+      "displayName" : "X-Y Timeseries with Zoom and Subchart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        },
+        "x" : {
+          "type" : "timeseries",
+          "tick" : "Trillo.timeTickFormat"
+        }
+      },
+      "zoom": {
+        "enabled": true
+      },
+      "subchart": {
+        "show": true
+      },
+      "name" : "Chart4"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView4">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart4">
+    <div class="trillo-title js-title">
+      X-Y Timeseries with Zoom and Subchart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

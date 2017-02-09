@@ -1,0 +1,38 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "authorizeFailed",
+    "type" : "page",
+    "displayName" : "Authorization Failed"
+  }
+</script>
+
+<div class="trillo-root-elem">
+  <!--#include file="authheader.htm" -->
+  <div class="trillo-application js-application">
+    <div class="main-content-area auth-page">
+      <div class="trillo-form-container">
+        <div class="trillo-form-container-inner">
+          <h4>
+            You are not authorized to access the page or application given in the URL.
+          </h4>
+          <h4>
+            <a href="/_logout?postLogout=login">
+              Click here to logout and login as a different user.
+            </a>
+          </h4>
+          <h4>
+            or,
+          </h4>
+          <h4>
+            <a href="/">
+              Click here to continue to home page.
+            </a>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--#include file="alert.htm" -->
+  <!--#include file="modal.htm" -->
+  <!--#include file="authfooter.htm" -->
+</div>

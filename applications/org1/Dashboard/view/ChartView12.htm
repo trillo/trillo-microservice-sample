@@ -1,0 +1,43 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView12",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView12_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "name" : "Chart12",
+      "xAttr" : "name",
+      "yAttrs" : [
+        "y"
+      ],
+      "label" : "%",
+      "type" : "gauge",
+      "displayName" : "Gauge Chart",
+      "color": {
+        "pattern": ["#FF0000", "#F97600", "#F6C600", "#60B044"],
+        "threshold": {
+          "values": [30, 60, 90, 100]
+        }
+      },
+      "size": {
+        "height": 200
+      }
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView12">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart12">
+    <div class="trillo-title js-title">
+      Gauge Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

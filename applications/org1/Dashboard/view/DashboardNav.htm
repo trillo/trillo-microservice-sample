@@ -1,0 +1,71 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "DashboardNav",
+    "type" : "nav",
+    "impl" : "Trillo.NavView",
+    "container" : "top-nav-container",
+    "nextView" : "Dashboard1",
+    "nextViewSpecs" : [
+          {
+            "name" : "Dashboard1",
+            "displayName" : "Dashboard1"
+          },
+          {
+            "name" : "Dashboard2",
+            "displayName" : "Dashboard2"
+          },
+          {
+            "name" : "Dashboard3",
+            "displayName" : "Dashboard3"
+          }
+        ]
+  }
+</script>
+
+<div nm="DashboardNav">
+  <ul class="nav nav-pills js-navigation" style="display:inline-block">
+    <li nm="Dashboard1" class="nav-item js-nav-item">
+      <div class="top-nav-text">
+        Dashboard1
+      </div>
+    </li>
+    <li nm="Dashboard2" class="nav-item js-nav-item">
+      <div class="top-nav-text">
+        Dashboard2
+      </div>
+    </li>
+    <li nm="Dashboard3" class="nav-item js-nav-item">
+      <div class="top-nav-text">
+        Dashboard3
+      </div>
+    </li>
+  </ul>
+  
+  <ul data-trigger="#header-nav-popover-tigger" data-target="#header-nav-popover-target" 
+     class="dropdown-menu">
+    <li><a nm="Dashboard1" class="js-nav-item" href="#">Dashboard1</a></li>
+    <li><a nm="Dashboard2" class="js-nav-item" href="#">Dashboard2</a></li>
+    <li><a nm="Dashboard3" class="js-nav-item" href="#">Dashboard3</a></li>
+    
+    <li class="trillo-role-dev-only trillo-role-admin-only nav-item-separator nav-item-small">
+      <a href="/AppCatalog" title="Application Catalog">
+        <i class="my-app-catalog glyphicon glyphicon-th-large"></i> App Catalog
+      </a>
+    </li>
+    <li class="screen-name-b js-menu-item trillo-on-valid-role nav-item-separator nav-item-small">
+      <a nm="myProfile" href="#" title="Click to change profile" class="screen-name js-tool">
+        <span class="js-screenname">{{{userFullName}}}</span>
+      </a>
+    </li>
+    <li class="logout-b js-menu-item trillo-on-valid-role nav-item-small">
+      <a nm="changeMyPassword" class="js-tool" href="#">
+        Change Password
+      </a>
+    </li>
+    <li class="logout-b js-menu-item trillo-on-valid-role nav-item-small">
+      <a nm="_logout" href="/_logout" class="screen-name js-tool">
+        Logout
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+default:
+  org: org1
+  app: Dashboard
+
+appdata:
+  dir: ../appdata 
+  
+repo:
+  dir: ../applications
+  
+spring:
+  resources:
+    static-locations: file:../trillojs/,classpath:/resources/
+  velocity:
+    resource-loader-path: file:../trillo-vm-templates

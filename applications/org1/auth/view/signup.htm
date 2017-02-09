@@ -1,0 +1,76 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "signup",
+    "displayName" : "Sign Up",
+    "type" : "page",
+    "nextView" : "SignupForm",
+    "nextViewSpecs" : [
+      {
+        "name" : "SignupForm",
+        "embedded" : true,
+        "impl" : "Trillo.FormView",
+        "elementSelector" : ".sign-up-form",
+        "postUrl" : "/_preauthsvc/user/signup"
+      }
+    ]
+  }
+</script>
+
+<div class="trillo-root-elem trillo-has-footer">
+  <div class="trillo-application js-application">
+    <!--#include file="authheader.htm" -->
+    <div class="main-content-area auth-page">
+      <div class="trillo-form-container">
+        <div class="trillo-form-container-inner sign-up-form">
+          <h1 class="trillo-form-title">
+            Sign Up
+          </h1>
+          <form>
+            <div class="form-group">
+              <label for="userId">User Id</label>
+              <input type="text" class="form-control js-required" nm="userId">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control js-required" nm="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control js-required" nm="password">
+            </div>
+            <div class="form-group">
+              <label for="rptPassword">Repeat New Password</label>
+              <input type="password" class="form-control js-required" nm="rptPassword">
+            </div>
+            <div class="form-group">
+              <label for="orgName">Workspace Name (also used as URL path)</label>
+              <input type="text" class="form-control js-required" nm="orgName">
+            </div>
+            <div class="form-group signup-tou-msg">
+              By clicking Sign Up, you agree to our 
+              <a href="/CollagerTOU.pdf">
+                Terms
+              </a>
+              .
+            </div>
+            <div class="form-group">
+              <button tabindex="3" nm="ok" type="submit" class="btn btn-primary js-tool">Sign Up</button>
+            </div>
+          </form>
+        </div>
+        <div class="trillo-form-container-inner sign-up-message hide">
+          You are successfully signed up. We have sent you an email to verify your email address. Please click on a
+          link in the email to verify. If you do not find email in the inbox, please check the spam folder. 
+          <h4>
+          </h4>
+          <a href="/AppCatalog">
+            Click here to login.
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--#include file="alert.htm" -->
+  <!--#include file="modal.htm" -->
+  <!--#include file="authfooter.htm" -->
+</div>

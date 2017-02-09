@@ -1,0 +1,20 @@
+[
+{
+  path : "api/abc/*/**",
+  location: "http://localhost:9003/abc",
+  roles: "*"
+},
+
+{
+  path : "api/abc/**",
+  location: "http://localhost:9000/abc",
+  roles: "*"
+},
+
+{
+  path : "api/cde/**",
+  location: "http://localhost:9001/cde",
+  roles: "*"
+}
+
+]

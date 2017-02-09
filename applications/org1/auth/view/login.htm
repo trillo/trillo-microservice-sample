@@ -1,0 +1,62 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "login",
+    "type" : "page",
+    "displayName" : "Login"
+  }
+</script>
+
+<div class="trillo-root-elem">
+  <div class="trillo-application js-application">
+    <!--#include file="authheader.htm" -->
+    <div class="singup-button-container trillo-clearfix">
+      <div class="pull-right">
+        <div class="signup-prompt">
+          New User?
+        </div>
+        <a href="/auth/signup" class="btn btn-sm btn-success">
+          Signup
+        </a>
+      </div>
+    </div>
+    <div class="main-content-area login-box">
+      <div class="trillo-form-container">
+        <div class="trillo-form-container-inner">
+          <h1 class="trillo-form-title">
+            Login
+          </h1>
+          <div class="login-fail-alert alert alert-danger">
+            Your credentials are incorrect. Please reenter correct user-id and password combination.
+          </div>
+          <form action="/doLogin" method="post">
+            <fieldset>
+              <div class="form-group">
+                <input type="text" placeholder="Name or Email" class="form-control js-required" tabindex="1" name=
+                "j_username">
+                <span class="text-warning">&#160;</span>
+              </div>
+              <div class="form-group">
+                <input tabindex="2" type="password" placeholder="Password" class="form-control js-required" name=
+                "j_password">
+                <span class="text-warning">&#160;</span>
+              </div>
+              <div style="display:none" class="checkbox reme-checkbox">
+                <label class="checkbox">
+                <input tabindex="5" name="reme" type="checkbox"> Keep me logged in</label>
+              </div>
+              <div class="form-group">
+                <button tabindex="3" type="submit" class="btn btn-primary js-login">Login</button>
+                <a tabindex="4" href="/auth/forgotPassword" class="forgot-password-link">
+                  Forgot your password?
+                </a>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--#include file="alert.htm" -->
+  <!--#include file="modal.htm" -->
+  <!--#include file="authfooter.htm" -->
+</div>

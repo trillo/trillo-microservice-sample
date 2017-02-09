@@ -1,0 +1,34 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView3",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView3_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "name" : "Chart3",
+      "xAttr" : "name",
+      "yAttrs" : [
+        "y"
+      ],
+      "label" : "%",
+      "type" : "pie",
+      "displayName" : "Pie Chart"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView3">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart3">
+    <div class="trillo-title js-title">
+      Pie Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

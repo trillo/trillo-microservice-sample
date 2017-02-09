@@ -1,0 +1,45 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "ChartView5",
+    "type" : "chart",
+    "autoLoad" : true,
+    "impl" : "Trillo.ChartView",
+    "container" : "ChartView5_container"
+  }
+</script>
+
+<script spec="chart" type="application/json">
+  [
+    {
+      "xAttr" : "x",
+      "yAttrs" : [
+        "y1",
+        "y2"
+      ],
+      "type" : "spline",
+      "displayName" : "Spline Chart",
+      "axis" : {
+        "y" : {
+          "label" : {
+            "text" : "Y Label",
+            "position" : "outer-middle"
+          }
+        }
+      },
+      "zoom": {
+        "enabled": true
+      },
+      "name" : "Chart5"
+    }
+  ]
+</script>
+
+<div class="chart-view" nm="ChartView5">
+  <div class="trillo-chart-c js-chart-cell" nm="Chart5">
+    <div class="trillo-title js-title">
+      Spline Chart
+    </div>
+    <div class="chart js-chart">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+# shared name space
+shared/static/js/shared_ns.js
+auth/static/js/auth_ns.js

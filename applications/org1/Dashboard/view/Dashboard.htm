@@ -1,0 +1,35 @@
+<script spec="view" type="application/json">
+  {
+    "name" : "Dashboard",
+    "type" : "page",
+    "controller" : "AppC",
+    "impl" : "Trillo.FlexGridView",
+    "nextView" : "DashboardNav",
+    "nextViewSpecs" : [
+      {
+        "name" : "DashboardNav"
+      }
+    ]
+  }
+</script>
+
+
+<div class="trillo-application js-application" nm="Dashboard">
+  <div class="js-flex-grid" style="height:100%">
+    <div nm="r1" class="js-flex-row" flex-height="false" min-height="55">
+      <!--#include file="header.htm" -->
+    </div>
+    <div nm="r2" class="js-flex-row">
+      <div class="js-flex-col" min-width="300">
+        <div class="js-flex-row main-content-area js-container" min-height="100" nm="main-container">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="js-toolbar-tools hide">
+    <button class="btn btn-default btn-xs" type="button" nm="addVCenter">Add vCenter</button>
+  </div>
+</div>
+<!--#include file="misc.htm" -->
+<!--#include file="alert.htm" -->
+<!--#include file="modal.htm" -->
