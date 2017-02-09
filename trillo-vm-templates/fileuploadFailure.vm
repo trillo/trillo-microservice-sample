@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<title>File Upload Reponse</title>
+</head>
+
+
+<body>
+  
+</body>
+
+<script type="text/javascript">
+  var options = { 
+    targetViewName: "$targetViewName",
+    error: "$error",
+    fileName: "$fileName"
+  }
+  // since the target is iframe, we need to message to the parent window
+  parent.Trillo.page.fileUploadFailed(options);
+</script>
+</html>

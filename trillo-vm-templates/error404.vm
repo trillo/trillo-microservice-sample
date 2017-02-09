@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/$orgName/">
+	<title>Error 404</title>
+	<link rel="shortcut icon" type="image/ico" href="shared/static/img/favicon.ico"/>
+</head>
+<body>
+<div class="main-area">
+	<h1 style="margin:20px 0px; text-align:center">
+		404 - page does not exists.
+	</h1>
+</div>
+</body>
+	
+</html>

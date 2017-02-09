@@ -8,7 +8,7 @@
     "name" : "Dashboard",
     "requiredRoles" : "none",
     "uid" : "AppM.Dashboard",
-    "useTestData" : true
+    "useTestData" : false
   },
   {
     "description" : "Trillo authentication page",

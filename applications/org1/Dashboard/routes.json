@@ -1,19 +1,7 @@
 [
 {
-  path : "api/abc/*/**",
-  location: "http://localhost:9003/abc",
-  roles: "*"
-},
-
-{
-  path : "api/abc/**",
-  location: "http://localhost:9000/abc",
-  roles: "*"
-},
-
-{
-  path : "api/cde/**",
-  location: "http://localhost:9001/cde",
+  path : "api/data/*",
+  location: "http://localhost:8090/data",
   roles: "*"
 }
 

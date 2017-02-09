@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="/$orgName/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$page.htmlHeadTitle</title>
+<meta name="description" content="$page.description" />
+<meta name="keywords" content="$page.keywords" />
+
+<link rel="shortcut icon" type="image/x-icon" href="shared/static/img/favicon.ico"/>
+<link rel="stylesheet" href="/lib/css/bootstrap.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/lib/css/bootstrap-theme.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/lib/css/c3.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/lib/css/perfect-scrollbar.css" />
+<link rel="stylesheet" href="/lib/css/font-awesome-4.6.3_2/css/font-awesome.css?_v=$buildTimestamp" type="text/css" />
+
+
+#if  ($activeProfile == "production")
+<link rel="stylesheet" href="/dist/css/trillo-all.css?_v=$buildTimestamp" type="text/css" />
+#else
+<link rel="stylesheet" href="/css/role.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo-c3-d3.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo-theme.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo-bootstrap.css?_v=$buildTimestamp" type="text/css" />
+#end
+
+$css
+
+</head>
+

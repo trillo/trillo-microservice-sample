@@ -1,0 +1,98 @@
+#if  ($activeProfile == "production")
+<script type="text/javascript" charset="utf-8"  src="/dist/js/lib.min.js?_v=$buildTimestamp"></script>
+<script type="text/javascript" src="/dist/js/trillo-core.min.js?_v=$buildTimestamp"></script>
+<script type="text/javascript" src="/dist/js/trillo-view.min.js?_v=$buildTimestamp"></script>
+<script type="text/javascript" src="/dist/js/trillo-common.min.js?_v=$buildTimestamp"></script>
+
+#else
+<script type="text/javascript" src="/lib/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.js"></script>
+<script type="text/javascript" src="/lib/js/jquery.history-master/jquery.history.js"></script>
+<script type="text/javascript" src="/lib/js/moment/moment.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+<script type="text/javascript" src="/lib/js/typeahead.js"></script>
+<script type="text/javascript" src="/lib/js/sockjs/sockjs.js"></script>
+<script type="text/javascript" src="/lib/js/stomp/stomp.js"></script>
+<script type="text/javascript" charset="utf-8"  src="/lib/js/d3/d3.js"></script>
+<script type="text/javascript" src="/lib/js/c3/c3.js"></script>
+<script type="text/javascript" src="/lib/js/autosize/autosize.js"></script>
+<script type="text/javascript" src="/lib/js/purl-master/purl.js"></script>
+<script type="text/javascript" src="/lib/js/mustache/mustache.js"></script>
+<script type="text/javascript" src="/lib/js/javascript-debug-master/ba-debug.js"></script>
+<script type="text/javascript" src="/lib/js/perfect-scrollbar/perfect-scrollbar.jquery.js"></script>
+<script type="text/javascript" src="/src/js/core/jqueryExt.js"></script>
+<script type="text/javascript" src="/src/js/core/trillo.js"></script>
+<script type="text/javascript" src="/src/js/core/css.js"></script>
+<script type="text/javascript" src="/src/js/core/util.js"></script>
+<script type="text/javascript" src="/src/js/core/storage.js"></script>
+<script type="text/javascript" src="/src/js/core/navHistory.js"></script>
+<script type="text/javascript" src="/src/js/core/enumCatalog.js"></script>
+<script type="text/javascript" src="/src/js/core/ajaxUtil.js"></script>
+<script type="text/javascript" src="/src/js/core/log.js"></script>
+<script type="text/javascript" src="/src/js/core/alert.js"></script>
+<script type="text/javascript" src="/src/js/core/modal.js"></script>
+<script type="text/javascript" src="/src/js/core/router.js"></script>
+<script type="text/javascript" src="/src/js/core/modelFactory.js"></script>
+<script type="text/javascript" src="/src/js/core/model.js"></script>
+<script type="text/javascript" src="/src/js/core/apiAdapterFactory.js"></script>
+<script type="text/javascript" src="/src/js/core/apiAdapter.js"></script>
+<script type="text/javascript" src="/src/js/core/restAdapter.js"></script>
+<script type="text/javascript" src="/src/js/core/testDataAdapter.js"></script>
+<script type="text/javascript" src="/src/js/core/observer.js"></script>
+<script type="text/javascript" src="/src/js/core/viewUtil.js"></script>
+<script type="text/javascript" src="/src/js/core/viewManager.js"></script>
+<script type="text/javascript" src="/src/js/core/builder.js"></script>
+<script type="text/javascript" src="/src/js/core/baseController.js"></script>
+<script type="text/javascript" src="/src/js/core/page.js"></script>
+<script type="text/javascript" src="/src/js/core/contextMenuManager.js"></script>
+<script type="text/javascript" src="/src/js/core/catalogsLoader.js"></script>
+<script type="text/javascript" src="/src/js/core/bizDelegate.js"></script>
+<script type="text/javascript" src="/src/js/core/main.js"></script>
+
+<script type="text/javascript" src="/src/js/view/controller.js"></script>
+<script type="text/javascript" src="/src/js/view/tools.js"></script>
+<script type="text/javascript" src="/src/js/view/toolsManager.js"></script>
+<script type="text/javascript" src="/src/js/view/infoBlock.js"></script>
+<script type="text/javascript" src="/src/js/view/canvas.js"></script>
+<script type="text/javascript" src="/src/js/view/tree.js"></script>
+<script type="text/javascript" src="/src/js/view/titleBar.js"></script>
+<script type="text/javascript" src="/src/js/view/titleBarManager.js"></script>
+<script type="text/javascript" src="/src/js/view/dragHandler.js"></script>
+<script type="text/javascript" src="/src/js/view/baseView.js"></script>
+<script type="text/javascript" src="/src/js/view/view.js"></script>
+<script type="text/javascript" src="/src/js/view/editableView.js"></script>
+<script type="text/javascript" src="/src/js/view/editableObjView.js"></script>
+<script type="text/javascript" src="/src/js/view/viewSelectionView.js"></script>
+<script type="text/javascript" src="/src/js/view/treeView.js"></script>
+<script type="text/javascript" src="/src/js/view/navTreeView.js"></script>
+<script type="text/javascript" src="/src/js/view/selectorView.js"></script>
+<script type="text/javascript" src="/src/js/view/tabView.js"></script>
+<script type="text/javascript" src="/src/js/view/navView.js"></script>
+<script type="text/javascript" src="/src/js/view/collectionView.js"></script>
+<script type="text/javascript" src="/src/js/view/dropdownView.js"></script>
+<script type="text/javascript" src="/src/js/view/detailView.js"></script>
+<script type="text/javascript" src="/src/js/view/formView.js"></script>
+<script type="text/javascript" src="/src/js/view/editableTableView.js"></script>
+<script type="text/javascript" src="/src/js/view/chartView.js"></script>
+<script type="text/javascript" src="/src/js/view/contentView.js"></script>
+<script type="text/javascript" src="/src/js/view/tocView.js"></script>
+<script type="text/javascript" src="/src/js/view/flexGridView.js"></script>
+<script type="text/javascript" src="/src/js/view/dashboardView.js"></script>
+<script type="text/javascript" src="/src/js/view/fileUploadC.js"></script>
+<script type="text/javascript" src="/src/js/view/dashboardController.js"></script>
+<script type="text/javascript" src="/src/js/view/popover.js"></script>
+
+<script type="text/javascript" src="/src/js/common/entityAdapter.js"></script>
+<script type="text/javascript" src="/src/js/common/paginationAdapter.js"></script>
+<script type="text/javascript" src="/src/js/common/treeAdapter.js"></script>
+<script type="text/javascript" src="/src/js/common/searchHandler.js"></script>
+
+
+#end
+
+$js
+
+<script type="text/javascript">
+Trillo.appContext = $appContext;
+</script>
+</html>

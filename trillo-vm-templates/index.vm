@@ -1,0 +1,8 @@
+#parse( "pageTop.vm" )
+<body class="user-trillo-role-$user.currentAppRole">
+
+$html
+	
+</body>
+
+#parse( "pageBottom.vm" )

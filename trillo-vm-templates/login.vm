@@ -1,0 +1,11 @@
+#parse( "loginTop.vm" )
+
+<body class="$loginFailed" style="font-size: 13px; color: #222222; background-color: #ffffff">
+
+$html
+  
+</body>
+
+#parse( "loginBottom.vm" )
+
+

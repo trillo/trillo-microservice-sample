@@ -1,0 +1,24 @@
+#if  ($activeProfile == "production")
+<script type="text/javascript" charset="utf-8"  src="/dist/js/lib.min.js?_v=$buildTimestamp"></script>
+<script type="text/javascript" src="/dist/js/trillo-login.min.js?_v=$buildTimestamp"></script>
+#else
+<script type="text/javascript" src="/lib/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.js"></script>
+<script type="text/javascript" src="/src/js/core/jqueryExt.js"></script>
+<script type="text/javascript" src="/src/js/core/trillo.js"></script>
+<script type="text/javascript" src="/src/js/core/css.js"></script>
+<script type="text/javascript" src="/src/js/core/util.js"></script>
+<script type="text/javascript" src="/src/js/core/storage.js"></script>
+<script type="text/javascript" src="/src/js/core/navHistory.js"></script>
+<script type="text/javascript" src="/src/js/core/alert.js"></script>
+<script type="text/javascript" src="/src/js/core/baseController.js"></script>
+<script type="text/javascript" src="/src/js/view/controller.js"></script>
+#end
+
+$js
+
+<script type="text/javascript">
+Trillo.appContext = $appContext;
+</script>
+
+</html>

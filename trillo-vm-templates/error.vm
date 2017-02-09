@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/$orgName/">
+	<title>Error</title>
+	<link rel="shortcut icon" type="image/ico" href="shared/static/img/favicon.ico"/>
+</head>
+<body>
+<div class="main-area" style="max-width: 640px; margin: 0 auto">
+	<h1 style="margin:20px 0px; text-align:center">
+		Internal Error!
+	</h1>
+	<h2>
+		$error, $status
+	</h2>
+	<h3>
+		$message
+	</h3>
+</div>
+</body>
+	
+</html>

@@ -5,7 +5,7 @@
 	<groupId>io.trillo</groupId>
 	<artifactId>trillo-microservice-sample</artifactId>
 	<name>trillo-microservice-sample</name>
-	<version>0.1.0-BUILD-SNAPSHOT</version>
+	<version>0.5.0-BUILD-SNAPSHOT</version>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -61,7 +61,7 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>com.collager.trillo</groupId>
+									<groupId>io.trillo</groupId>
 									<artifactId>trillo-microservice-sample</artifactId>
 									<version>0.5.0-BUILD-SNAPSHOT</version>
 								</artifactItem>

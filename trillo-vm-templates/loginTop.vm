@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="/$orgName/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud App Development Platform - Login</title>
+<meta name="description" content="Integrated Cloud Management" />
+<meta name="keywords" content="Integrated Cloud Management" />
+
+<link rel="shortcut icon" type="image/ico" href="shared/static/img/favicon.ico"/>
+<link rel="stylesheet" href="/lib/css/bootstrap.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/lib/css/bootstrap-theme.css?_v=$buildTimestamp" type="text/css" />
+#if  ($activeProfile == "production")
+<link rel="stylesheet" href="/dist/css/trillo-all.css?_v=$buildTimestamp" type="text/css" />
+#else
+<link rel="stylesheet" href="/css/trillo.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo-theme.css?_v=$buildTimestamp" type="text/css" />
+<link rel="stylesheet" href="/css/trillo-bootstrap.css?_v=$buildTimestamp" type="text/css" />
+#end
+
+$css
+
+</head>
+
+

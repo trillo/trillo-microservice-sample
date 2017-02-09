@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/$orgName/">
+	<title>Error</title>
+	<link rel="shortcut icon" type="image/ico" href="/shared/static/img/favicon.ico"/>
+</head>
+<body>
+<div class="main-area">
+	<h1 style="margin:20px 0px; text-align:center">
+		Internal Error!  
+	</h1>
+	<div style="display:none">$stackTrace</div>
+</div>
+</body>
+	
+</html>
