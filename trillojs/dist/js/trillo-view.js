@@ -8,6 +8,335 @@
  *
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  *******************************************************************************/
+
+(function() {
+
+  "use strict";
+  
+  Trillo.FieldFactory = function(options) {
+    this.table = {};
+  };
+  
+  var FieldFactory = Trillo.FieldFactory.prototype;
+  
+  FieldFactory.registerFieldClass = function(fieldType, cls) {
+    this.table[fieldType] = cls;
+  },
+  
+  FieldFactory._attachField = function($e, view, editable) {
+    var f = $e.data("_trillo_field_");
+    var ClsRef;
+    if (!f) {
+      var ftype = $e.dataOrAttr("field-type");
+      ClsRef = ftype ? this.table[ftype] : null;
+      if (!ClsRef) {
+        ClsRef = this.getFieldClass($e, editable);
+      }
+      f = new ClsRef($e, view, editable);
+      $e.data("_trillo_field_", f);
+    }
+    return f;
+  },
+  
+  FieldFactory.attachField = function($e, view) {
+    return this._attachField($e, view, true);
+  },
+  
+  FieldFactory.attachReadonlyField = function($e, view) {
+    return this._attachField($e, view, false);
+  },
+  
+  FieldFactory.attachFields = function($el, view) {
+    var self = this;
+    $.each($el, function() {
+      self.attachField($(this), view);
+    });
+  };
+
+  FieldFactory.attachReadonlyFields = function($el, view) {
+    var self = this;
+    $.each($el, function() {
+      self.attachReadonlyField($(this), view);
+    });
+  };
+  
+  FieldFactory.getFieldClass = function($e, editable) {
+    if ($e.is(":checkbox")) {
+      return Trillo.CheckboxField;
+    } else if ($e.is(":radio")) {
+      return Trillo.RadioField;
+    } else if ($e.is(":image")) {
+      return Trillo.ImageField;
+    } else if ($e.is("select")) {
+      return Trillo.SelectField;
+    } else if (Trillo.canUserEnterData($e)) {
+      // input, password, text, hidden 
+      return Trillo.InputField;
+    }
+    return Trillo.Field;
+  };
+  
+})();
+
+/*******************************************************************************
+ * Copyright (c) 2015, 2017 Collager Inc.
+ *
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ *******************************************************************************/
+
+(function() {
+
+  "use strict";
+  
+  var messageHtml = '<span class="js-field-message ' + Trillo.CSS.fieldMsg + ' text-info"></span>';
+  var errorHtml = '<span class="js-field-error ' + Trillo.CSS.fieldMsg + ' text-danger"></span>';
+
+  Trillo.Field = function($e, view, editable) {
+    this.$e = $e;
+    this.view = view;
+    this.editable = editable;
+    this.name = $e.dataOrAttr("nm");
+  };
+  
+  var Field = Trillo.Field.prototype;
+ 
+  Field.validate = function() {
+    var $e = this.$e;
+    if (!$e.is(':visible')) {
+      return true;
+    }
+    this.clearInlineError();
+    var f = true;
+    var value = this.getValue();
+    var noValue = value === '' || value === undefined;
+    if ($e.hasClass("js-required") && noValue) {
+      this.inlineError("Required");
+      f = false;
+    }
+
+    if ($e.hasClass("number") && (!noValue && !Trillo.isNumeric(value))) {
+      this.inlineError("Numeric value required");
+      f = false;
+    }
+    if (!f) {
+      $e.parent().addClass(Trillo.CSS.hasErrorCss);
+    }
+    return f;
+  };
+ 
+  Field.inlineMsg = function(msg) {
+    var $e = this.$e;
+    var $em = $e.siblings('.js-field-message');
+    if ($em.length === 0) {
+      $e.after(messageHtml);
+      $em = $e.siblings('.js-field-message');
+    }
+    $em.html(msg);
+    $em.parent().addClass(Trillo.CSS.hasMessageCss);
+    return $em;
+  };
+  Field.inlineError = function(msg) {
+    var $e = this.$e;
+    var $em = $e.siblings('.js-field-error');
+    if ($em.length === 0) {
+      $e.after(errorHtml);
+      $em = $e.siblings('.js-field-error');
+    }
+    $em.html(msg);
+    $em.parent().addClass(Trillo.CSS.hasErrorCss);
+    return $em;
+  };
+  Field.clearInlineMessage = function() {
+    var $e = this.$e;
+    var $em = $e.siblings('.js-field-message');
+    if ($em.length) {
+      $em.html('');
+      $em.parent().removeClass(Trillo.CSS.hasMessageCss);
+    }
+  };
+  Field.clearInlineError = function() {
+    var $e = this.$e;
+    var $em = $e.siblings('.js-field-error');
+    if ($em.length) {
+      $em.html('');
+      $em.parent().removeClass(Trillo.CSS.hasErrorCss);
+    }
+  };
+  
+  Field.getValue = function() {
+    return this.$e.val();
+  };
+  Field.setValue = function(value) {
+    var $e = this.$e;
+    value = Trillo.formatValue($e, value); // will get display value
+    var dt = $e.dataOrAttr("display-type");
+    if (dt === "css-class") {
+      if (value) {
+        $e.addClass(value);
+        $e.attr("_value_as_css_class_", value);
+      } else {
+        var temp = $e.attr("_value_as_css_class_");
+        if (temp) {
+          $e.removeClass(value);
+          $e.removeAttr("_value_as_css_class_");
+        }
+      }
+    } else {
+      $e.html(typeof value === "undefined" ? "" : ("" + value));
+    }
+  };
+  Field.setValueFromObj = function(obj) {
+    var value = Trillo.getObjectValue(obj, this.name);
+    if (value === null) {
+      value = "";
+    }
+    this.setValue(value);
+  };
+
+  Field.setDisabled = function(f) {
+    var $e = this.$e;
+    if (f) {
+      $e.attr("disabled", true);
+    } else {
+      $e.removeAttr("disabled");
+    }
+  }
+})();
+
+(function() {
+
+  "use strict";
+  
+  Trillo.CheckboxField = Trillo.inherits(Trillo.Field, function($e, view, editable) {
+    Trillo.Field.call(this, $e, view, editable);
+    if (!editable) {
+      $e.attr("disabled", "true");
+    }
+  });
+  
+  var CheckboxField = Trillo.CheckboxField.prototype;
+  var Field = Trillo.Field;
+  
+  CheckboxField.setValue = function(value) {
+    this.$e.prop('checked', value);
+  };
+  
+  CheckboxField.getValue = function() {
+    return this.$e.prop('checked') ? true : false;
+  };
+  
+})();
+
+(function() {
+
+  "use strict";
+  
+  Trillo.RadioField = Trillo.inherits(Trillo.Field, function($e, view, editable) {
+    Trillo.Field.call(this, $e, view, editable);
+    if (!editable) {
+      $e.attr("disabled", "true");
+    }
+  });
+  
+  var RadioField = Trillo.RadioField.prototype;
+  var Field = Trillo.Field;
+  
+  RadioField.setValue = function(value) {
+    this.$e.prop('checked', value);
+  };
+  
+  RadioField.getValue = function() {
+    return this.$e.prop('checked') ? true : false;
+  };
+  
+})();
+
+(function() {
+
+  "use strict";
+  
+  Trillo.InputField = Trillo.inherits(Trillo.Field, function($e, view, editable) {
+    Trillo.Field.call(this, $e, view, editable);
+    if (!editable) {
+      $e.attr("disabled", "true");
+    }
+  });
+  
+  var InputField = Trillo.InputField.prototype;
+  var Field = Trillo.Field;
+  
+  InputField.setValue = function(value) {
+    var $e = this.$e;
+    Trillo.setSelectOptionsFromEnum($e, value);
+    $e.val(value);
+    $e.parent().find(".js-temp-elem-for-readonly").remove();
+    if (this.editable) {
+      $e.show();
+    } else {
+      $e.hide();
+      $e.after('<span class="js-temp-elem-for-readonly">' + value + '</span>');
+    }
+  }
+  
+})();
+
+(function() {
+
+  "use strict";
+  
+  Trillo.SelectField = Trillo.inherits(Trillo.Field, function($e, view, editable) {
+    Trillo.Field.call(this, $e, view, editable);
+    if (!editable) {
+      $e.attr("disabled", "true");
+    }
+  });
+  
+  var SelectField = Trillo.SelectField.prototype;
+  var Field = Trillo.Field;
+  
+  SelectField.setValue = function(value) {
+    var $e = this.$e;
+    Trillo.setSelectOptionsFromEnum($e, value);
+    $e.val(value);
+    $e.parent().find(".js-temp-elem-for-readonly").remove();
+    if (this.editable) {
+      $e.show();
+    } else {
+      $e.hide();
+      value = $e.find("option:selected").text(); // will get display value
+      $e.after('<span class="js-temp-elem-for-readonly">' + value + '</span>');
+    }
+  }
+  
+})();
+
+(function() {
+
+  "use strict";
+  
+  Trillo.ImageField = Trillo.inherits(Trillo.Field, function($e, view, editable) {
+    Trillo.Field.call(this, $e, view, editable);
+    if (!editable) {
+      $e.attr("disabled", "true");
+    }
+  });
+  
+  var ImageField = Trillo.ImageField.prototype;
+  var Field = Trillo.Field;
+  
+  ImageField.setValue = function(value) {
+    this.$e.attr("src", value);
+  }
+  
+})();
+
+
+
+/*******************************************************************************
+ * Copyright (c) 2015, 2017 Collager Inc.
+ *
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ *******************************************************************************/
 (function() {
 
   "use strict";
@@ -794,10 +1123,11 @@
   
   InfoElement.show = function(obj, infoBlock) {
     var $e, $c, $gcl, el = this.elements, n = el.length, name;
+    var f;
     for (var i = 0; i < n; i++) {
       $e = $(el[i]);
-      name = $e.dataOrAttr("nm");
-      Trillo.setFieldValue($e, obj[name], false);
+      f = Trillo.getCreateField($e);
+      f.setValue(obj[f.name]);
     }
     var contentH = infoBlock.contentH;
     if (this.$rootE.hasClass("js-content-row") && contentH) {
@@ -816,10 +1146,10 @@
     }
   };
   InfoElement.clear = function() {
-    var e, el = this.elements, n = el.length;
+    var f, el = this.elements, n = el.length;
     for (var i = 0; i < n; i++) {
-      e = el[i];
-      Trillo.setFieldValue($(e), null, false);
+      f = Trillo.getCreateField($(el[i]));
+      f.setValue(null);
     }
   };
   InfoElement.copyIt = function(obj) {
@@ -988,9 +1318,9 @@
   };
   InfoBlock.fieldChanged = function(ev) {
     var $e = $(ev.target);
-    var name = $e.dataOrAttr("nm");
-    var value = Trillo.getFieldValue($e);
-    this.canvas.changeAttr(this.obj, name, value);
+    var f = Trillo.getCreateField($e);
+    var value = f.getValue();
+    this.canvas.changeAttr(this.obj, f.name, value);
   };
 
   Trillo.infoElementRepo = new Trillo.InfoElementRepo();
@@ -1731,9 +2061,11 @@
   Tree.setFieldsValues = function(e2, item) {
     var el = e2.find("[nm]"), temp;
     var n = el.length;
+    var f;
     for (var i = 0; i < n; i++) {
       temp = $(el[i]);
-      Trillo.setFieldValue(temp, item[temp.dataOrAttr("nm")], false);
+      f = Trillo.getCreateField(temp);
+      f.setValue(item[temp.dataOrAttr("nm")]);
     }
   };
 
@@ -3465,78 +3797,24 @@
   var EditableView = Trillo.EditableView.prototype;
   var View = Trillo.View.prototype;
 
-  EditableView.updateElements = function($el, data) {
+  EditableView.updateFields = function(fl, data) {
     var self = this;
-    $.each($el, function() {
-      var $e = $(this);
-      var name = $e.dataOrAttr("nm");
-      var value = Trillo.getObjectValue(data, name);
-      if (value === null) {
-        value = "";
-      }
-      Trillo.setFieldValue($e, value);
+    $.each(fl, function(i, field) {
+      field.setValueFromObj(data);
     });
   };
 
-  EditableView.updateReadonlyElements = function($el, data) {
-    var self = this;
-    $.each($el, function() {
-      var $e = $(this);
-      var name = $e.dataOrAttr("nm");
-      var value = Trillo.getObjectValue(data, name);
-      if (value === null) {
-        value = "";
-      }
-      Trillo.setReadonlyFieldValue($e, value);
-    });
-  };
-
-  EditableView.retrieveData = function($el) {
-    var data = {};
-    var self = this;
-    $.each($el, function() {
-      var $e = $(this);
-      var name = $e.dataOrAttr("nm");
-      var value = Trillo.getFieldValue($e);
-      if (value !== null && value !== undefined) {
-        Trillo.setObjectValue(data, name, value);
-      }
-    });
-    return data;
-  };
-  EditableView._validateOne = function($e) {
+  EditableView.validateOne = function(field) {
+    var $e = field.$e;
     if (!$e.is(':visible')) {
       return true;
     }
-    this.clearInlineError($e);
-    var f = true;
-    var value = Trillo.getFieldValue($e);
-    var noValue = value === '' || value === undefined;
-    if ($e.hasClass("js-required") && noValue) {
-      this.inlineError($e, "Required");
-      f = false;
-    }
-
-    if ($e.hasClass("number") && (!noValue && !Trillo.isNumeric(value))) {
-      this.inlineError($e, "Numeric value required");
-      f = false;
-    }
-    if (!f) {
-      $e.parent().addClass(Trillo.CSS.hasErrorCss);
-    }
-    return f;
-  };
-  EditableView.validateOne = function(ev) {
-    var $e = $(ev.target);
-    if (!$e.is(':visible')) {
-      return true;
-    }
-    var f = this._validateOne($e);
+    var f = field.validate();
     if (f && this.controller().validateOne) {
-      f = this.controller().validateOne($e);
+      f = this.controller().validateOne(field);
     }
     if (f && this.controller().validateAndGetMsg) {
-      var msg = this.controller().validateAndGetMsg($e);
+      var msg = this.controller().validateAndGetMsg(field);
       if (msg) {
         this.inlineError($e, msg);
         $e.parent().addClass(Trillo.CSS.hasErrorCss);
@@ -3545,11 +3823,10 @@
     }
     return f;
   };
-  EditableView._validate = function(el) {
+  EditableView._validate = function(fl) {
     var f = true;
-    for (var i = 0; i < el.length; i++) {
-      var $e = $(el[i]);
-      f = this._validateOne($e) && f;
+    for (var i = 0; i < fl.length; i++) {
+      f = fl[i].validate() && f;
     }
     return f;
   };
@@ -3574,64 +3851,50 @@
     }
   };
   EditableView.inlineMsg = function($e, msg) {
-    var $em = $e.siblings('.js-field-message');
-    if ($em.length === 0) {
-      $e.after(this.messageHtml);
-      $em = $e.siblings('.js-field-message');
-    }
-    $em.html(msg);
-    $em.parent().addClass(Trillo.CSS.hasMessageCss);
-    return $em;
+    var field = Trillo.getCreateField($e);
+    field.inlineMsg(msg);
   };
   EditableView.inlineError = function($e, msg) {
-    var $em = $e.siblings('.js-field-error');
-    if ($em.length === 0) {
-      $e.after(this.errorHtml);
-      $em = $e.siblings('.js-field-error');
-    }
-    $em.html(msg);
-    $em.parent().addClass(Trillo.CSS.hasErrorCss);
-    return $em;
+    var field = Trillo.getCreateField($e);
+    field.inlineError(msg);
   };
   EditableView.clearInlineMessage = function($e) {
-    var $em = $e.siblings('.js-field-message');
-    if ($em.length) {
-      $em.html('');
-      $em.parent().removeClass(Trillo.CSS.hasMessageCss);
-    }
+    var field = Trillo.getCreateField($e);
+    field.clearInlineMessage();
   };
   EditableView.clearInlineError = function($e) {
-    var $em = $e.siblings('.js-field-error');
-    if ($em.length) {
-      $em.html('');
-      $em.parent().removeClass(Trillo.CSS.hasErrorCss);
-    }
+    var field = Trillo.getCreateField($e);
+    field.clearInlineError();
   };
   EditableView.fieldChanged = function(ev) {
-    var f = this.validateOne(ev);
+    var $e = $(ev.target);
+    var field = Trillo.getCreateField($e);
+    var f = this.validateOne(field);
     if (!f) {
       return;
     }
-    var $e = $(ev.target);
-    var name = $e.dataOrAttr("nm");
-    var value = Trillo.getFieldValue($e);
+    var value = field.getValue();
     var obj = this.getObjForField($e);
-    this.updateModelData(name, value, $e);
-    return f;
+    this.updateModelData(field.name, value, $e);
+    return true;
   };
   EditableView.getFieldValue = function(name) {
     var $e = this.$e.find('[nm="' + name + '"]');
-    if ($e.length) {
-      return Trillo.getFieldValue($e);
-    }
+    return this.getFieldValueOf($e);
+  };
+  EditableView.getFieldValueOf = function($e) {
+    var field = Trillo.getCreateField($e);
+    return field.getValue();
   };
   EditableView.setFieldValue = function(name, value) {
     var $e = this.$e.find('[nm="' + name + '"]');
-    if ($e.length) {
-      Trillo.setFieldValue($e, value);
-      if (this._validateOne($e)) {
-        this.updateModelData(name, value, $e);
-      }
+    this.setFieldValueOf($e, value);
+  };
+  EditableView.setFieldValueOf = function($e, value) {
+    var field = Trillo.getCreateField($e);
+    field.setValue(value);
+    if (field.validate()) {
+      this.updateModelData(field.name, value, $e);
     }
   };
 
@@ -3639,10 +3902,46 @@
     return Trillo.getInputs(this.$e);
   };
 
-  EditableView.getReadonlyFields = function() {
-    return Trillo.getReadonlyFields(this.$e);
+  EditableView.getReadonly = function() {
+    return Trillo.getReadonly(this.$e);
   };
-
+  
+  EditableView.getFields = function() {
+    return this.getFieldsOf(this.$e);
+  };
+  
+  EditableView.getReadonlyFields = function() {
+    return this.getReadonlyFieldsOf(this.$e);
+  };
+  
+  EditableView.getAllFields = function() {
+    return this.getAllFieldsOf(this.$e);
+  };
+  
+  EditableView.getFieldsOf = function($e) {
+    return this.getAsFields(Trillo.getInputs($e));
+  };
+  
+  EditableView.getReadonlyFieldsOf = function($e) {
+    return this.getAsFields(Trillo.getReadonly($e));
+  };
+  
+  EditableView.getAllFieldsOf = function($e) {
+    var l = this.getFieldsOf($e);
+    l = l.concat(this.getReadonlyFieldsOf($e));
+    return l;
+  };
+  
+  EditableView.getAsFields = function($el) {
+    var self = this;
+    var l = [];
+    $.each($el, function() {
+      var f = Trillo.getCreateField($(this));
+      l.push(f);
+    });
+    return l;
+  };
+  
   EditableView.postShow = function(myDeferred) {
     var $tal = this.$e.find('textarea');
     if ($tal.length) {
@@ -3691,6 +3990,8 @@
 
   EditableObjView.render = function() {
     EditableView.render.call(this);
+    Trillo.fieldFactory.attachFields(this.getInputs(), this);
+    Trillo.fieldFactory.attachReadonlyFields(this.getReadonly(), this);
     this.setSelectedObj(this.getData());
     this.updateProgress(this.getData());
     this.setChangeHandler(true);
@@ -3699,8 +4000,7 @@
 
   EditableObjView.renderData = function() {
     var data = this.getData() || {};
-    this.updateElements(this.getInputs(), data);
-    this.updateReadonlyElements(this.getReadonlyFields(), data);
+    this.updateFields(this.getAllFields(), data);
   };
 
   EditableObjView.setChangeHandler = function(isOn) {
@@ -3712,8 +4012,8 @@
   };
 
   EditableObjView.validate = function() {
-    var el = this.getInputs();
-    var f = this._validate(el);
+    var fl = this.getFields();
+    var f = this._validate(fl);
     f = f & EditableView.validate.call(this);
     return f;
   };
@@ -4621,8 +4921,7 @@
     for (var i = 0; i < dataList.length; i++) {
       var $r = this.appendNewRow(i);
       $r.data("_row_data_", dataList[i]);
-      this.updateElements(Trillo.getInputs($r), dataList[i]);
-      this.updateReadonlyElements(Trillo.getReadonlyFields($r), dataList[i]);
+      this.updateFields(this.getAllFieldsOf($r), dataList[i]);
     }
   };
 
@@ -4632,8 +4931,7 @@
       var $e = $($el[i]);
       var rowData = $e.data("_row_data_");
       if (rowData) {
-        this.updateElements(Trillo.getInputs($e), rowData);
-        this.updateReadonlyElements(Trillo.getReadonlyFields($e), rowData);
+        this.updateFields(this.getAllFieldsOf($e), rowData);
       }
     }
   };
@@ -4652,6 +4950,19 @@
     var dl = [];
     this._viewToData(dl, true, true);
     this.emptyData = dl[0];
+  };
+  
+  EditableTableView.retrieveData = function($el) {
+    var data = {};
+    var self = this;
+    var fl = this.getAsFields($el);
+    $.each(fl, function(i, f) {
+      var value = f.getValue();
+      if (value !== null && value !== undefined) {
+        Trillo.setObjectValue(data, f.name, value);
+      }
+    });
+    return data;
   };
 
   // re-populates data array from the view.
@@ -4708,7 +5019,7 @@
       $e = $(this);
       var $inputs = Trillo.getInputs($e);
       if (!self.isEmpty($inputs)) {
-        f = self._validate($inputs) && f;
+        f = self._validate(this.getFieldsOf($inputs)) && f;
       }
     });
     f = f & EditableView.validate.call(this);
@@ -4718,9 +5029,10 @@
   EditableTableView.isEmpty = function($el) {
     var f = true;
     var emptyData = this.emptyData || {};
+    var self = this;
     $.each($el, function() {
       var $e = $(this);
-      var value = Trillo.getFieldValue($e);
+      var value = self.getFieldValueOf($e);
       var empty = emptyData[$e.attr("nm")];
       if (value !== empty) {
         f = false;
@@ -5494,10 +5806,7 @@
       flexHeight : true,
       parent : parent
     };
-    /*
-     * This is moved to baseView.setupView(); if ($te.dataOrAttr("trigger")) {
-     * spec.popover = Trillo.popoverManager.createPopoverForContent($te); }
-     */
+   
     return spec;
   };
 

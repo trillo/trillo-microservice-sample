@@ -1,5 +1,6 @@
 #if  ($activeProfile == "production")
 <script type="text/javascript" charset="utf-8"  src="/dist/js/lib.min.js?_v=$buildTimestamp"></script>
+<script type="text/javascript" charset="utf-8"  src="/dist/js/libsvg.min.js?_v=$buildTimestamp"></script>
 <script type="text/javascript" src="/dist/js/trillo-core.min.js?_v=$buildTimestamp"></script>
 <script type="text/javascript" src="/dist/js/trillo-view.min.js?_v=$buildTimestamp"></script>
 <script type="text/javascript" src="/dist/js/trillo-common.min.js?_v=$buildTimestamp"></script>

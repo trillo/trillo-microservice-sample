@@ -68,6 +68,7 @@ var Trillo = {
     this.createSearchHandler();
 
     this.createBuilder();
+    this.createFieldFactory();
     this.createViewManager();
     this.createModelFactory();
     this.createApiAdapterFactory();
@@ -105,6 +106,12 @@ var Trillo = {
   AppInitializer.createViewManager = function() {
     if (Trillo.ViewManager) {
       Trillo.viewManager = new Trillo.ViewManager();
+    }
+  };
+  
+  AppInitializer.createFieldFactory = function() {
+    if (Trillo.FieldFactory) {
+      Trillo.fieldFactory = new Trillo.FieldFactory();
     }
   };
 

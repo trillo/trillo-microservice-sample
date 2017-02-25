@@ -68,6 +68,7 @@ var Trillo = {
     this.createSearchHandler();
 
     this.createBuilder();
+    this.createFieldFactory();
     this.createViewManager();
     this.createModelFactory();
     this.createApiAdapterFactory();
@@ -105,6 +106,12 @@ var Trillo = {
   AppInitializer.createViewManager = function() {
     if (Trillo.ViewManager) {
       Trillo.viewManager = new Trillo.ViewManager();
+    }
+  };
+  
+  AppInitializer.createFieldFactory = function() {
+    if (Trillo.FieldFactory) {
+      Trillo.fieldFactory = new Trillo.FieldFactory();
     }
   };
 
@@ -2884,68 +2891,6 @@ $(function() {
     return [];
   };
 
-  Trillo.setFieldValue = function($e, value, readonly) {
-    var name, type, dt, tagName;
-    tagName = $e.prop("tagName").toLowerCase();
-    name = $e.dataOrAttr("nm");
-    type = $e.attr("type");
-
-    if (type === "radio" || type === "checkbox") {
-      $e.prop('checked', value);
-      if (readonly) {
-        $e.attr("disabled", "true");
-      }
-    } else if (tagName === "input" || tagName === "textarea" || tagName === "select") {
-      if (tagName === "select") {
-        Trillo.setSelectOptionsFromEnum($e, value);
-      }
-      $e.val(value);
-      $e.parent().find(".js-temp-elem-for-readonly").remove();
-      if (!readonly) {
-        $e.show();
-        /*
-         * if (tagName === "textarea") { $e.height("auto");
-         * setTimeout(function() { $e.height($e[0].scrollHeight); }, 0); }
-         */
-      } else {
-        $e.hide();
-        if (tagName === "select") {
-          value = $e.find("option:selected").text(); // will get display value
-        }
-        $e.after('<span class="js-temp-elem-for-readonly">' + value + '</span>');
-      }
-    } else if (tagName === 'img') {
-      $e.attr("src", value);
-    } else {
-      value = Trillo.formatValue($e, value); // will get display value
-      dt = $e.dataOrAttr("display-type");
-      if (dt === "css-class") {
-        if (value) {
-          $e.addClass(value);
-          $e.attr("_value_as_css_class_", value);
-        } else {
-          var temp = $e.attr("_value_as_css_class_");
-          if (temp) {
-            $e.removeClass(value);
-            $e.removeAttr("_value_as_css_class_");
-          }
-        }
-      } else {
-        $e.html(typeof value === "undefined" ? "" : ("" + value));
-      }
-    }
-  };
-
-  Trillo.setReadonlyFieldValue = function($e, value, readonly) {
-    var tagName = $e.prop("tagName").toLowerCase();
-    if (tagName === 'img') {
-      $e.attr("src", value);
-    } else {
-      value = Trillo.formatValue($e, value); // will get display value
-      $e.html(typeof value === "undefined" ? "" : ("" + value));
-    }
-  };
-
   Trillo.resizeAllTextArea = function($e) {
     /*
      * var $tl = $e.find("textarea"); if ($tl.length) { $tl.height("auto");
@@ -3016,19 +2961,25 @@ $(function() {
   Trillo.getInputs = function($e) {
     return $e.find('input, textarea, select').not(':input[type=button], :input[type=submit], :input[type=reset]');
   };
-
-  Trillo.getReadonlyFields = function($e) {
-    return $e.find('.js-readonly-content', 'img[nm]');
+  
+  Trillo.canUserEnterData = function($e) {
+    return $e.is(':input') && !$e.is(':button, :submit, :reset, :file, :image');
   };
 
-  Trillo.getFieldValue = function($e) {
-    switch ($e.attr("type")) {
-    case "radio":
-    case "checkbox":
-      return $e.prop('checked') ? true : false;
-    default:
-      return $e.val();
+  Trillo.getReadonly = function($e) {
+    return $e.find('.js-readonly-content', 'img[nm]');
+  };
+  
+  Trillo.getCreateField = function($e) {
+    var f = $e.data("_trillo_field_");
+    if (!f) {
+      if (Trillo.canUserEnterData($e)) {
+        f = Trillo.fieldFactory.attachField($e);
+      } else {
+        f = Trillo.fieldFactory.attachReadonlyField($e);
+      }
     }
+    return f;
   };
 
   Trillo.getClosestNamedElem = function($e) {
