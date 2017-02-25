@@ -1,6 +1,8 @@
 #if  ($activeProfile == "production")
 <script type="text/javascript" charset="utf-8"  src="/dist/js/lib.min.js?_v=$buildTimestamp"></script>
+#if  ($requiresChartLibs == "true")
 <script type="text/javascript" charset="utf-8"  src="/dist/js/libsvg.min.js?_v=$buildTimestamp"></script>
+#end
 <script type="text/javascript" src="/dist/js/trillo-core.min.js?_v=$buildTimestamp"></script>
 <script type="text/javascript" src="/dist/js/trillo-view.min.js?_v=$buildTimestamp"></script>
 <script type="text/javascript" src="/dist/js/trillo-common.min.js?_v=$buildTimestamp"></script>
@@ -14,13 +16,15 @@
 <script type="text/javascript" src="/lib/js/typeahead.js"></script>
 <script type="text/javascript" src="/lib/js/sockjs/sockjs.js"></script>
 <script type="text/javascript" src="/lib/js/stomp/stomp.js"></script>
-<script type="text/javascript" charset="utf-8"  src="/lib/js/d3/d3.js"></script>
-<script type="text/javascript" src="/lib/js/c3/c3.js"></script>
 <script type="text/javascript" src="/lib/js/autosize/autosize.js"></script>
 <script type="text/javascript" src="/lib/js/purl-master/purl.js"></script>
 <script type="text/javascript" src="/lib/js/mustache/mustache.js"></script>
 <script type="text/javascript" src="/lib/js/javascript-debug-master/ba-debug.js"></script>
 <script type="text/javascript" src="/lib/js/perfect-scrollbar/perfect-scrollbar.jquery.js"></script>
+#if  ($requiresChartLibs == "true")
+<script type="text/javascript" charset="utf-8"  src="/lib/js/d3/d3.js"></script>
+<script type="text/javascript" src="/lib/js/c3/c3.js"></script>
+#end
 <script type="text/javascript" src="/src/js/core/jqueryExt.js"></script>
 <script type="text/javascript" src="/src/js/core/trillo.js"></script>
 <script type="text/javascript" src="/src/js/core/css.js"></script>
@@ -50,6 +54,8 @@
 <script type="text/javascript" src="/src/js/core/bizDelegate.js"></script>
 <script type="text/javascript" src="/src/js/core/main.js"></script>
 
+<script type="text/javascript" src="/src/js/view/fieldFactory.js"></script>
+<script type="text/javascript" src="/src/js/view/field.js"></script>
 <script type="text/javascript" src="/src/js/view/controller.js"></script>
 <script type="text/javascript" src="/src/js/view/tools.js"></script>
 <script type="text/javascript" src="/src/js/view/toolsManager.js"></script>
