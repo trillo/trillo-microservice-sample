@@ -75,10 +75,6 @@ public class Result {
     }
     props.put(name, value);
   }
-
-  public boolean isFailed() {
-    return FAILED.equals(status);
-  }
   
   public static Result makeResult(String status, String message) {
     Result r = new Result();
